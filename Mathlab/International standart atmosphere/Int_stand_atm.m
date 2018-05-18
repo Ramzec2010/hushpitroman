@@ -1,0 +1,62 @@
+function [p,rho,T] = Int_stand_atm(h)
+h0=0;
+h1=11000;
+h2=20000;
+h3=32000;
+h4=47000;
+h5=50000;
+T0=288.15;
+p0=101325;
+R=287;
+a1=-0.0065;
+a3=0.001;
+a4=0.0028;
+g=9.801;
+if h<=h1 
+    T1=T0+a1.*(h-h0);
+    p1=p0.*(T1./T0).^(-g/(a1*R));
+    rho1=p1./(R.*T1);
+    T=T1
+    p=p1
+    rho=rho1
+else
+    if h<=h2
+    T1=T0+a1.*(h1);
+    p1=p0.*(T1./T0).^(-g/(a1*R));
+    T2=T1;
+    p2=p1.*exp(-(h-h1).*g./(T2.*R));
+    rho2=p2./(R.*T2);
+     T=T2 
+     p=p2
+     rho=rho2
+    else
+    if h<=h3
+       T1=T0+a1.*(h1);
+       p1=p0.*(T1./T0).^(-g/(a1*R));
+       T2=T1;
+       p2=p1.*exp(-(h2-h1).*g./(T2.*R));
+       T3=T2+a3.*(h-h2);
+       p3=p2.*(T3./T2).^(-g/(a3*R));
+       rho3=p3./(R.*T3);
+     T=T3 
+     p=p3
+     rho=rho3
+    else
+        if h<=h4
+             T1=T0+a1.*(h1);
+             p1=p0.*(T1./T0).^(-g/(a1*R));
+             T2=T1;
+             p2=p1.*exp(-(h2-h1).*g./(T2.*R));
+             T3=T2+a3.*(h3-h2);
+             p3=p2.*(T3./T2).^(-g/(a3*R));
+             T4=T3+a4.*(h-h3);
+             p4=p3.*(T4./T3).^(-g/(a4*R));
+             rho4=p4./(R.*T4);
+              T=T4 
+              p=p4
+              rho=rho4
+        end;
+    end
+    end
+end
+end

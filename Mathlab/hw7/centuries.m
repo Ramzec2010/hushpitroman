@@ -1,0 +1,70 @@
+function r_y =  centuries (year)
+%UNTITLED3 Summary of this function goes here
+%   Detailed explanation goes here
+if ~isscalar(year)||fix(year)~=year
+    r_y='';
+elseif year<=100&&year>0
+    r_y='I';
+elseif  year<=200&&year>100
+    r_y='II';
+    elseif  year<=300&&year>200
+    r_y='III';
+    elseif  year<=400&&year>300
+    r_y='IV';
+    elseif  year<=500&&year>400
+    r_y='V';
+    elseif  year<=600&&year>500
+    r_y='VI';
+    elseif  year<=700&&year>600
+    r_y='VII';
+    elseif  year<=800&&year>700
+    r_y='VIII';
+    elseif  year<=900&&year>800
+    r_y='IX';
+    elseif  year<=1000&&year>900
+    r_y='X';
+    elseif  year<=1100&&year>100
+    r_y='XI';
+    elseif  year<=1200&&year>100
+    r_y='XII';
+    elseif  year<=1300&&year>100
+    r_y='XIII';
+    elseif  year<=1400&&year>100
+    r_y='XIV';
+    elseif  year<=1500&&year>100
+    r_y='XV';
+    elseif  year<=1600&&year>100
+    r_y='XVI';
+    elseif  year<=1700&&year>100
+    r_y='XVII';
+    elseif  year<=1800&&year>100
+    r_y='XVIII';
+    elseif  year<=1900&&year>100
+    r_y='XIX';
+    elseif  year<=2000&&year>100
+    r_y='XX';
+    elseif  year<=2100&&year>100
+    r_y='XXI';
+    elseif  year<=2200&&year>100
+    r_y='XXII';
+    elseif  year<=2300&&year>100
+    r_y='XXIII';
+    elseif  year<=2400&&year>100
+    r_y='XXIV';
+    elseif  year<=2500&&year>100
+    r_y='XXV';
+    elseif  year<=2600&&year>100
+    r_y='XXVI';
+    elseif  year<=2700&&year>100
+    r_y='XXVII';
+    elseif  year<=2800&&year>100
+    r_y='XXVIII';
+    elseif  year<=2900&&year>100
+    r_y='XXIX';
+    elseif  year<=3000&&year>100
+    r_y='XXX';
+    
+else
+    r_y='';
+end
+
