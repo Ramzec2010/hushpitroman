@@ -6,8 +6,8 @@ public class SlobodaFrienda {
     public static void main(String[] args) {
         int [] [] list = {{0, 0, 0, 0, 0}, {0, 0, 1, 0, 0}, {0, 1, 0, 0, 1}, {0, 0, 0, 0, 1}, {0, 0, 1, 1, 0}};
         int num = numOfFriends(5,2, list);
-        //int [] [] list = {{0, 1, 0}, {1, 0, 1}, {0, 1, 0}};
-        //int num = numOfFriends(3,1, list);
+//        int [] [] list = {{0, 1, 0}, {1, 0, 1}, {0, 1, 0}}
+//        int num = numOfFriends(3,1, list);
         System.out.println(num);
     }
 
@@ -33,7 +33,11 @@ public class SlobodaFrienda {
                 }
             }
         }
+        numbOfFriends = numbOfFriends - 1;
+        if (numbOfFriends == N)
+            numbOfFriends = N - 1;
 
-        return numbOfFriends - 1;
+
+        return numbOfFriends;
     }
 }
