@@ -18,8 +18,10 @@ class MyLinkedList {
             return -1;
         }
         else {
+            if (index == 0) {return head.val;} else {
             for (int i = 0; i < index; i++){
                 curr = curr.next;
+            }
             }
         }
         return curr.val;
@@ -45,7 +47,7 @@ class MyLinkedList {
 
 
     public void addAtIndex(int index, int val) {
-        if (index > this.length) return;
+        if (head == null || index >= this.length) return;
         if (index == this.length) {
             addAtTail(val);
             return;
@@ -69,14 +71,15 @@ class MyLinkedList {
     }
 
     public void deleteAtIndex(int index) {
-        if (index > length || index < 0) return;
-        if (index == length){
+        if (head == null || index >= length || index < 0) return;
+        if (index == length - 1){
             Node last = this.head;
             for (int i = 0; i < length - 1; i++){
                 last = last.next;
             }
             last.next = null;
             length--;
+            return;
         }
         Node curr = this.head;
         for (int i = 1; i < index -1; i++) {
@@ -105,12 +108,24 @@ class MyLinkedList {
 
     public static void main(String[] args) {
         MyLinkedList linkedList = new MyLinkedList();
-        int j = linkedList.get(0);
+//        int j = linkedList.get(0);
+//        linkedList.addAtIndex(1,2);
+//        linkedList.deleteAtIndex(0);
+//        linkedList.addAtHead(1);
+//        linkedList.addAtTail(3);
+//        linkedList.addAtIndex(1,2);
+//        int i  =  linkedList.get(1);
+//        System.out.println(i);
+//        linkedList.deleteAtIndex(1);
+//        i = linkedList.get(1);
+//        System.out.println(i);
         linkedList.addAtHead(1);
-        linkedList.addAtTail(3);
-        linkedList.addAtIndex(1,2);
-        int i  =  linkedList.get(1);
-        linkedList.deleteAtIndex(1);
-        i = linkedList.get(1);
+        int k = linkedList.get(0);
+        linkedList.addAtIndex(0,2);
+        k = linkedList.get(1);
+        k = linkedList.get(0);
+        k = linkedList.get(2);
+//        linkedList.deleteAtIndex(1);
+
     }
 }
